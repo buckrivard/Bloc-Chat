@@ -1,7 +1,8 @@
 (function () {
 	function MainCtrl ('$scope', Room) {
-		this.rooms = Room;
+		var rooms = Room;
 
+		$scope.rooms = rooms;
 	}
 
 	angular
