@@ -4,7 +4,7 @@
             .state('main', {
                 url: '/',
                 controller: 'MainCtrl as main',
-                templateUrl: '/templates/main.html'
+                templateUrl: '<h1>testing</h1>'
             })
     }
 
