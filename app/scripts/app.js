@@ -1,11 +1,19 @@
 (function() {
 	function config($stateProvider, $locationProvider) {
-		$stateProvider
+	    $locationProvider
+            .html5Mode({
+                enabled: true,
+                requireBase: false
+	    });	
+        
+        $stateProvider
             .state('main', {
                 url: '/',
                 controller: 'MainCtrl as main',
-                templateUrl: '<h1>testing</h1>'
-            })
+                templateUrl: '/templates/main.html'
+        });
+
+
     }
 
 	angular
