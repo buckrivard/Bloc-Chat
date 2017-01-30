@@ -1,7 +1,13 @@
 <section>
 	<div>
+		<form>
+			<label>Add a Room!<br>
+			<input type="text" name="add_room" placeholder="Room Name"></label>
+			<input type="submit" text="Add Room!" ng-click="main.addRoom()">
+		</form>
 		<ul ng-repeat="room in rooms">
 			<li>{{room.$value}}</li>
 		</ul>
+
 	</div>
 </section>

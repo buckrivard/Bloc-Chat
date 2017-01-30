@@ -1,7 +1,17 @@
 <section>
 	<div>
+		<form>
+			<label>Add a Room!<br>
+			<input type="text" name="add_room" placeholder="Room Name"></label>
+			<input type="submit" text="Add Room!" ng-click="main.addRoom()">
+		</form>
 		<ul ng-repeat="room in rooms">
 			<li>{{room.$value}}</li>
+			<!-- An idea I want to do is have the name of the new room bind instantly to a new dom element, only to destroy itself when user submits form - so it appears to the user their room is being named in real time, even though it's only instantialized upon form submission. Far fetched? -->
+
+			<!-- <li ng-if="{input field data binding in real time}"></li> -->
+			
 		</ul>
+
 	</div>
 </section>
