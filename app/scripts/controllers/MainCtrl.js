@@ -1,7 +1,10 @@
 (function () {
 	function MainCtrl($scope, Room) {
 		$scope.rooms = Room.all;
-		this.addRoom = Room.addRoom;
+		$scope.addRoom = function(newName) {
+			Room.addRoom(newName);
+			newName = '';
+		}
 	}
 
 	angular
