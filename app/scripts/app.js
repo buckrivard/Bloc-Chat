@@ -11,7 +11,11 @@
                 url: '/',
                 controller: 'MainCtrl as main',
                 templateUrl: '/templates/main.html'
-        });
+        })
+            .state('messages', {
+            	url: '/',
+            	templateUrl: '/templates/messages.html'
+            })
 
 
     }

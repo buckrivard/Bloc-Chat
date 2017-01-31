@@ -1,0 +1,9 @@
+.messenger {
+
+	position: fixed;
+	top: 20px;
+	right: 0px;
+	height: 1000px;
+	width: 66%;
+	background-color: red;
+}

@@ -1,0 +1,12 @@
+html {
+	height: 100%;
+	font-size: 100%;
+}
+
+.banner {
+	position: fixed;
+	top: 0px;
+	width: 100%;
+	background-color: grey;
+	text-align: center;
+}
