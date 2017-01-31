@@ -5,6 +5,7 @@
 
 		var addRoom = function(roomName) {
 			rooms.$add(roomName);
+			roomnName = null;
 		}
 
 		return {
