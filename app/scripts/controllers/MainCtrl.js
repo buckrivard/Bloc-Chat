@@ -3,7 +3,7 @@
 		$scope.rooms = Room.all;
 		$scope.addRoom = function(newName) {
 			Room.addRoom(newName);
-			newName = '';
+			$scope.roomName = null;
 		}
 	}
 
