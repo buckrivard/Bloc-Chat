@@ -1,12 +1,14 @@
 <section>
-	<div class="navigation">
-		<form class="new-thread" ng-submit="addRoom(roomName)">
+	<div class="add-room">
+		<form ng-submit="addRoom(roomName)">
 			<label>Add a Room!<br>
 			<input class="input" type="text" name="add_room" ng-model="roomName" placeholder="Room Name"></label>
 			<input type="button" value="Add it, baby" ng-click="addRoom(roomName)">
 		</form>
-		<table class="rooms" ng-repeat="room in rooms">
-			<tr>
+	</div>
+	<div class="rooms">
+		<table>
+			<tr ng-repeat="room in rooms">
 				<td>{{ room.room }}</td>
 			</tr>
 		</table>

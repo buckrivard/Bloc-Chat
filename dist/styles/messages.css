@@ -1,9 +1,10 @@
 .messenger {
-
+	display: inline-block;
 	position: fixed;
-	top: 20px;
+	top: 30px;
 	right: 0px;
+	left: 420px;
 	height: 1000px;
-	width: 66%;
+	width: 100%;
 	background-color: red;
 }

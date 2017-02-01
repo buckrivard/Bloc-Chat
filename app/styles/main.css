@@ -1,22 +1,25 @@
-.navigation {
+.add-room {
 	display: inline-block;
 	text-align: center;
-	position: relative;
+	position: fixed;
 	height: 100%;
 	width: 420px;
 	background-color: gray;
+	overflow-y: scroll;
 }
 
-.new-thread {
-	display: inline-block;
-	margin-left: auto;
-	margin-right: auto;
-	margin: auto;
+.rooms table {
+	position: relative;
+	margin-bottom: 75px;
+	z-index: 1;
+	overflow-y: scroll;
+}
+
+.rooms td {
+	position: relative;
+	top: 70px;
 	width: 420px;
-}
-
-
-
-.new-thread .input {
-	width: 50%;
+	text-align: center;
+	font-size: 2rem;
+	overflow-y: scroll;
 }
