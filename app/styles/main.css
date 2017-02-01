@@ -2,24 +2,15 @@
 	display: inline-block;
 	text-align: center;
 	position: fixed;
-	height: 100%;
+	height: 50px;
 	width: 420px;
 	background-color: gray;
 	overflow-y: scroll;
 }
 
-.rooms table {
-	position: relative;
-	margin-bottom: 75px;
-	z-index: 1;
-	overflow-y: scroll;
-}
-
-.rooms td {
-	position: relative;
-	top: 70px;
+.rooms {
+	position: fixed;
+	top: 80px;
+	display: inline-block;
 	width: 420px;
-	text-align: center;
-	font-size: 2rem;
-	overflow-y: scroll;
 }
