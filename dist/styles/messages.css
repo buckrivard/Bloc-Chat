@@ -1,4 +1,4 @@
-.messenger {
+.messages {
 	display: inline-block;
 	position: fixed;
 	top: 30px;
@@ -8,4 +8,20 @@
 	width: 100%;
 	background-color: #9e9e9e;
 	font-size: 3rem;
+}
+
+.room-title {
+	width: auto;
+	height: auto;
+}
+
+.message {
+	width: auto;
+	height: auto;
+	background-color: white;
+}
+
+.message2 {
+	width: auto;
+	height: auto;
 }

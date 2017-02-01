@@ -8,8 +8,8 @@
 	</div>
 	<div class="rooms">
 		<table>
-			<tr ng-repeat="room in rooms">
-				<td>{{ room.room }}</td>
+			<tr class="room-name" ng-repeat="room in rooms">
+				<td ng-click="chooseActiveRoom(room.room)">{{ room.room }}</td>
 			</tr>
 		</table>
 		<table ng-if="roomName">

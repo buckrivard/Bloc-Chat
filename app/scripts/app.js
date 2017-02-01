@@ -14,6 +14,7 @@
         })
             .state('messages', {
             	url: '/',
+                controller: 'MessageCtrl as messages',
             	templateUrl: '/templates/messages.html'
             })
 
