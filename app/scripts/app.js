@@ -12,12 +12,6 @@
                 controller: 'MainCtrl as main',
                 templateUrl: '/templates/main.html'
         })
-            .state('messages', {
-            	url: '/',
-                controller: 'MessageCtrl as messages',
-            	templateUrl: '/templates/messages.html'
-            })
-
 
     }
 

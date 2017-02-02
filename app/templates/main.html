@@ -9,7 +9,7 @@
 	<div class="rooms">
 		<table>
 			<tr class="room-name" ng-repeat="room in rooms">
-				<td ng-click="chooseActiveRoom(room.room)">{{ room.room }}</td>
+				<td ng-click="chooseActiveRoom(room.room); selectRoom(activeRoom)">{{ room.room }}</td>
 			</tr>
 		</table>
 		<table ng-if="roomName">
@@ -20,4 +20,9 @@
 	</div>
 </section>
 
-<ng-include src="'/templates/messages.html'"></ng-include>
+<section>
+	<div class="messages-container">
+		<div class="room-title"> The Room Name is : {{ activeRoom }}</div>
+		<div class="message-content" ng-show="activeRoom" ng-repeat="message in messages">{{ message.content }}</div>
+	</div>
+</section>
