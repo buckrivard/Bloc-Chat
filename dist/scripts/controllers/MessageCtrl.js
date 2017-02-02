@@ -1,8 +1,8 @@
 (function () {
-	function MessageCtrl($scope, Room) {
-		
+	function MessageCtrl($scope, Message) {
+		$scope.getByRoomId = Message.getByRoomId;
 	}
 	angular
 		.module('blocChat')
-		.controller('MainCtrl', [$scope, Room, MessageCtrl]);
+		.controller('MainCtrl', ['$scope', 'Message', MessageCtrl]);
 })();

@@ -1,8 +1,6 @@
 <header>
 	<div class="messages">
 		<div class="room-title"> The Room Name is : {{ activeRoom }}</div>
-		<div class="message">First message</div>
-		<div class="message2">Second message</div>
-		<div class="message">Third message</div>
+		<div class="message" ng-repeat="message in messages">{{ message.content }}</div>
 	</div>
 </header>
