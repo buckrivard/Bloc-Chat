@@ -4,8 +4,12 @@
 		var rooms = $firebaseArray(ref);
 
 		var addRoom = function(roomName) {
-			rooms.$add({room: roomName});
-		}
+			if (/\S/.test(roomName)) {
+				rooms.$add({room: roomName});
+			} else {
+				return window.alert("Use your words, please!");	
+			}
+		};
 
 		return {
 			all: rooms,

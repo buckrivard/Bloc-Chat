@@ -1,6 +1,6 @@
 <section>
 	<div class="add-room">
-		<form ng-submit="addRoom(roomName)">
+		<form class="new-room-form" ng-submit="addRoom(roomName)">
 			<label>Add a Room!<br>
 			<input class="input" type="text" name="add_room" ng-model="roomName" placeholder="Room Name"></label>
 			<input type="button" value="Add it, baby" ng-click="addRoom(roomName)">
@@ -9,7 +9,7 @@
 	<div class="rooms">
 		<table>
 			<tr class="room-name" ng-repeat="room in rooms">
-				<td ng-click="chooseActiveRoom(room.room); selectRoom(activeRoom)">{{ room.room }}</td>
+				<td ng-click="selectRoom(room)">{{ room.room }}</td>
 			</tr>
 		</table>
 		<table ng-if="roomName">
@@ -20,9 +20,12 @@
 	</div>
 </section>
 
+<section class="messages-container" ng-if="!activeRoom">
+</section>
+
 <section>
-	<div class="messages-container">
-		<div class="room-title"> The Room Name is : {{ activeRoom }}</div>
-		<div class="message-content" ng-repeat="message in messages">{{ message.content }}</div>
+	<div class="messages-container" ng-hide="!activeRoom">
+		<div class="room-title"> {{ nameOfRoom }} </div>
+		<div class="message-content" ng-repeat="message in messages">{{message.username}} - {{ message.content }} </div>
 	</div>
 </section>

@@ -4,7 +4,6 @@
 		var messages = $firebaseArray(ref);
 
 		return {
-			allMessages: messages,
 			getByRoomId: function(roomId) {
 				return $firebaseArray(ref.equalTo(roomId));			
 			}
