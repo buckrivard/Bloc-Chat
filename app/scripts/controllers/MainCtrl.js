@@ -5,12 +5,7 @@
 		//$scope.getByRoomId = Message.getByRoomId;
 
 		$scope.addRoom = function(newName) {
-			if (/\S/.test(roomName)) {
-				Room.addRoom(newName);
-			} else {
-				return window.alert("Use your words, please!");	
-				//window alert to be replaced by alternate notification method. Eventually.
-			}
+			Room.addRoom(newName);
 			$scope.roomName = null;
 		}
 		$scope.selectRoom = function(room) {
