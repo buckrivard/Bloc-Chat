@@ -3,12 +3,17 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>Buck Chat</title>
-    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" type="text/css" href="/styles/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/styles/style.css">
+    <link rel="stylesheet" type="text/css" href="/styles/banner.css">
+    <link rel="stylesheet" type="text/css" href="/styles/add-room.css">
+    <link rel="stylesheet" type="text/css" href="/styles/rooms-list.css">
+    <link rel="stylesheet" type="text/css" href="/styles/messages.css">
 </head>
-<body>
-	<nav class="navbar">
-		Buck Jams
-	</nav>
+<body class="index">
+	<header class="banner">
+        <span>Buck Chat</span>
+	</header>
 
 	<ui-view></ui-view>
 
@@ -30,5 +35,6 @@
     <script src="/scripts/app.js"></script>
     <script src="/scripts/services/Room.js"></script>
     <script src="/scripts/controllers/MainCtrl.js"></script>
+    <script src="/scripts/services/Message.js"></script>
 </body>
 </html>

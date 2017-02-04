@@ -1,0 +1,23 @@
+.rooms {
+	height: 100%;
+	width: auto;
+	position: fixed;
+	top: 80px;
+	display: inline-block;
+	width: 420px;
+	overflow-y: scroll;
+}
+
+.rooms table {
+	cursor: pointer;
+	font-size: 3rem;
+	width: inherit;
+}
+
+.rooms table td {
+	padding-right: 15px;
+}
+
+.room-name {
+	text-align: right;	
+}
