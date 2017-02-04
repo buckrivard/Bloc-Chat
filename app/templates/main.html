@@ -24,8 +24,10 @@
 </section>
 
 <section>
-	<div class="messages-container" ng-hide="!activeRoom">
-		<div class="room-title"> {{ nameOfRoom }} </div>
-		<div class="message-content" ng-repeat="message in messages">{{message.username}} - {{ message.content }} </div>
+	<div class="messages-container">
+		<div ng-hide="!activeRoom">
+			<div class="room-title"> {{ nameOfRoom }} </div>
+			<div class="message-content" ng-repeat="message in messages">{{message.username}} - {{ message.content }} </div>
+		</div>	
 	</div>
 </section>
