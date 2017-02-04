@@ -1,0 +1,13 @@
+.add-room {
+	display: inline-block;
+	text-align: center;
+	position: fixed;
+	height: 50px;
+	width: 420px;
+	background-color: gray;
+	overflow-y: scroll;
+}
+
+.new-room-form {
+	margin: auto;
+}
