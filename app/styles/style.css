@@ -1,0 +1,15 @@
+html {
+	height: 100%;
+	font-size: 100%;
+	box-sizing: border-box;
+	background-color: grey;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.index {
+	overflow-y: hidden;
+	margin: 0px;
+}

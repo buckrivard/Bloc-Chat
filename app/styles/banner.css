@@ -1,0 +1,9 @@
+.banner {
+	height: 40px;
+	position: relative;
+	top: 0px;
+	width: 100%;
+	background-color: grey;
+	text-align: center;
+	font-size: 2rem;
+}

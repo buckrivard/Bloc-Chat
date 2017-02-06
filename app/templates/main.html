@@ -1,15 +1,31 @@
 <section>
-	<div>
-		<form>
+	<div class="add-room">
+		<form class="new-room-form" ng-submit="addRoom(roomName)">
 			<label>Add a Room!<br>
-			<input type="text" name="add_room" ng-model="roomName" placeholder="Room Name"></label>
+			<input class="input" type="text" name="add_room" ng-model="roomName" placeholder="Room Name"></label>
 			<input type="button" value="Add it, baby" ng-click="addRoom(roomName)">
 		</form>
-		<ul ng-repeat="room in rooms">
-			<li>{{ room.room }}</li>
-		</ul>
-		<ul>
-			<li ng-if="roomName">{{ roomName }}</li>
-		</ul>
+	</div>
+	
+	<div class="rooms">
+		<table>
+			<tr class="room-name" ng-repeat="room in rooms">
+				<td ng-click="selectRoom(room)">{{ room.room }}</td>
+			</tr>
+		</table>
+		<table ng-if="roomName">
+			<tr class="room-name">
+				<td>{{ roomName }}</td>
+			</tr>
+		</table>
+	</div>
+</section>
+
+<section>
+	<div class="messages-container">
+		<div ng-hide="!activeRoom">
+			<div class="room-title"> {{ nameOfRoom }} </div>
+			<div class="message-content" ng-repeat="message in messages">{{message.username}} - {{ message.content }} </div>
+		</div>	
 	</div>
 </section>
