@@ -8,7 +8,8 @@
 		};
 
 		return {
-			getByRoomId: getByRoomId	
+			getByRoomId: getByRoomId
+			// is this proper naming convention for returning a method like this? What I did here seems stupid and naive
 		};
 	}
 
