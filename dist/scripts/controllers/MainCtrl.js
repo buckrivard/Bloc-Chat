@@ -20,6 +20,10 @@
 			$scope.messages = Message.getByRoomId(room.$id);
 			$scope.nameOfRoom = room.room;
 		}
+		$scope.setCurrentUser = function(blocChatCurrentUser) {
+			currentUser = 
+		}
+
 	}
 
 	angular

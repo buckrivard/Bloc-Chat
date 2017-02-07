@@ -1,7 +1,15 @@
 .signin {
-  padding-top: 40px;
+  padding-top: 20px;
   padding-bottom: 40px;
   background-color: #eee;
+  height: 100%;
+  width: auto;
+  position: fixed;
+  top: 40px;
+  display: inline-block;
+  width: 420px;
+  overflow-y: scroll;
+
 }
 
 .form-signin {
@@ -19,6 +27,7 @@
 .form-signin .form-control {
   position: relative;
   height: auto;
+  width: 95%;
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
           box-sizing: border-box;
@@ -29,7 +38,7 @@
   z-index: 2;
 }
 .form-signin input[type="email"] {
-  margin-bottom: -1px;
+  margin-bottom: 5px;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }

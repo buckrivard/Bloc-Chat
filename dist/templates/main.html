@@ -1,5 +1,5 @@
 <section>
-	<div ng-include="app/templates/signin.html">
+	<div ng-include="'/templates/signin.html'" class="signin" ng-show="!currentUser">
 		<div class="add-room" ng-hide="true">
 			<form class="new-room-form" ng-submit="addRoom(roomName)">
 				<label>Add a Room!<br>
