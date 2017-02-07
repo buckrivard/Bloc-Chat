@@ -1,23 +1,25 @@
 <section>
-	<div class="add-room">
-		<form class="new-room-form" ng-submit="addRoom(roomName)">
-			<label>Add a Room!<br>
-			<input class="input" type="text" name="add_room" ng-model="roomName" placeholder="Room Name"></label>
-			<input type="button" value="Add it, baby" ng-click="addRoom(roomName)">
-		</form>
-	</div>
-	
-	<div class="rooms">
-		<table>
-			<tr class="room-name" ng-repeat="room in rooms">
-				<td ng-click="selectRoom(room)">{{ room.room }}</td>
-			</tr>
-		</table>
-		<table ng-if="roomName">
-			<tr class="room-name">
-				<td>{{ roomName }}</td>
-			</tr>
-		</table>
+	<div ng-include="app/templates/signin.html">
+		<div class="add-room" ng-hide="true">
+			<form class="new-room-form" ng-submit="addRoom(roomName)">
+				<label>Add a Room!<br>
+				<input class="input" type="text" name="add_room" ng-model="roomName" placeholder="Room Name"></label>
+				<input type="button" value="Add it, baby" ng-click="addRoom(roomName)">
+			</form>
+		</div>
+		
+		<div class="rooms">
+			<table>
+				<tr class="room-name" ng-repeat="room in rooms">
+					<td ng-click="selectRoom(room)">{{ room.room }}</td>
+				</tr>
+			</table>
+			<table ng-if="roomName">
+				<tr class="room-name">
+					<td>{{ roomName }}</td>
+				</tr>
+			</table>
+		</div>
 	</div>
 </section>
 
