@@ -1,6 +1,6 @@
 <section>
 	<div ng-include="'/templates/signin.html'" class="signin" ng-show="!currentUser">
-		<div class="add-room" ng-hide="true">
+		<div class="add-room">
 			<form class="new-room-form" ng-submit="addRoom(roomName)">
 				<label>Add a Room!<br>
 				<input class="input" type="text" name="add_room" ng-model="roomName" placeholder="Room Name"></label>

@@ -21,7 +21,7 @@
 			$scope.nameOfRoom = room.room;
 		}
 		$scope.setCurrentUser = function(blocChatCurrentUser) {
-			currentUser = 
+			$scope.currentUser = blocChatCurrentUser;
 		}
 
 	}
