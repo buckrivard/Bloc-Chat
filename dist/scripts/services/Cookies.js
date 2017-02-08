@@ -1,16 +1,19 @@
 (function() {
-	function BlocChatCookies($cookies) {
-		var currentUser = $cookies.get('blocChatCurrentUser');
-		/*if (!currentUser || currentUser === '') {
-			//This code is unecessary when using ng-show on my signin.html, correct?
-		}*/
+	function BlocChatCookies($cookies, $rootScope) {
+		$rootScope.currentUser = $cookies.get('blocChatCurrentUser');
 
-		//I don't know how to use this .run provider. Does it need to be injected to mainCtrl 
-		//so the binding on the signin input updates and either gets or sets a cookie based
-		//on the user input?
+		if (!$rootScope.currentUser || $rootScope.currentUser === '') {
+			$rootScope.toggleSignIn = true;
+			console.log("do we ever even get here? If so, toggleSignIn is: " + $rootScope.toggleSignIn);
+		} else {
+			$rootScope.toggleSignIn = false;
+		}
 	}
 
 	angular
 	.module('blocChat')
-	.run(['$cookies', BlocChatCookies]);
+	.run(['$cookies', '$rootScope', BlocChatCookies]);
 })();
+
+
+

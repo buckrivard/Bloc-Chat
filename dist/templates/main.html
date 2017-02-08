@@ -1,6 +1,7 @@
 <section>
-	<div ng-include="'/templates/signin.html'" class="signin" ng-show="!currentUser">
-		<div class="add-room">
+	<div ng-include="'/templates/signin.html'" class="signin" ng-show="toggleSignIn">
+	</div>
+		<div class="add-room" ng-hide="toggleSignIn">
 			<form class="new-room-form" ng-submit="addRoom(roomName)">
 				<label>Add a Room!<br>
 				<input class="input" type="text" name="add_room" ng-model="roomName" placeholder="Room Name"></label>
@@ -8,10 +9,13 @@
 			</form>
 		</div>
 		
-		<div class="rooms">
+		<div class="rooms" ng-hide="toggleSignIn">
 			<table>
 				<tr class="room-name" ng-repeat="room in rooms">
 					<td ng-click="selectRoom(room)">{{ room.room }}</td>
+				</tr>
+				<tr>
+					<td ng-click="removeCookie()">{{ allCookies }}</td>
 				</tr>
 			</table>
 			<table ng-if="roomName">
@@ -20,7 +24,11 @@
 				</tr>
 			</table>
 		</div>
-	</div>
+
+		<div class="current-user" ng-show="!toggleSignIn">
+			{{ userName }}
+			<button ng-click="removeUser()">Sign Out</button>
+		</div>
 </section>
 
 <section>
