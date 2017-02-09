@@ -12,11 +12,16 @@
                 controller: 'MainCtrl as main',
                 templateUrl: '/templates/main.html'
         })
+            .state('username', {
+                url: '/set-username',
+                controller: 'UsernameCtrl as username',
+                templateUrl: '/templates/signin.html'
+            })
 
     }
 
 	angular
-        .module('blocChat', ['ui.router', 'firebase'])
+        .module('blocChat', ['ui.router', 'firebase', 'ngCookies'])
         .config(config);
 
 })();
