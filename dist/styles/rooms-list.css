@@ -1,17 +1,16 @@
 .rooms {
 	height: 100%;
-	width: auto;
+	width: 29%;
 	position: fixed;
 	top: 80px;
 	display: inline-block;
-	width: 420px;
 	overflow-y: scroll;
 }
 
 .rooms table {
 	cursor: pointer;
 	font-size: 3rem;
-	width: inherit;
+	width: 100%;
 }
 
 .rooms table td {

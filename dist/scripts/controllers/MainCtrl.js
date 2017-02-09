@@ -1,6 +1,7 @@
 (function () {
 	function MainCtrl($scope, Room, Message, $cookies, $location) {
 		$scope.rooms = Room.all;
+		$scope.sendMessage = Message.send;
 		$scope.activeRoom = null;
 		$scope.username = $cookies.get('blocChatCurrentUser');
 

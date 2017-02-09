@@ -1,0 +1,24 @@
+.enter-new-message {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	height: auto;
+	width: 71%;
+	font-size: 1rem;
+}
+
+.new-message-box {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	width: 100%;
+}
+
+.new-message-box input {
+	width: 100%;
+	height: auto;
+}
+
+.send-message {
+	width: auto;
+}

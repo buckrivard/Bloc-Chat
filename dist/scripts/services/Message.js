@@ -7,9 +7,17 @@
 			return $firebaseArray(ref.equalTo(roomId));
 		};
 
+		var send = function(newMessage) {
+			messages.$add({
+				content: newMessage,
+				username: username,
+				room: roomId
+			});
+		}
+
 		return {
-			getByRoomId: getByRoomId
-			// is this proper naming convention for returning a method like this? What I did here seems stupid and naive
+			getByRoomId: getByRoomId,
+			send: send
 		};
 	}
 

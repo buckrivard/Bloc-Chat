@@ -32,6 +32,7 @@
 		<div ng-hide="!activeRoom || toggleSignIn">
 			<div class="room-title"> {{ nameOfRoom }} </div>
 			<div class="message-content" ng-repeat="message in messages">{{message.username}} - {{ message.content }} </div>
-		</div>	
+		</div>
+		<ng-include src="'templates/send-message.html'"></ng-include>
 	</div>
 </section>

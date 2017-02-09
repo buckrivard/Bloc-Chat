@@ -7,7 +7,7 @@
   position: fixed;
   top: 40px;
   display: inline-block;
-  width: 420px;
+  width: 29%;
   overflow-y: scroll;
 }
 
@@ -113,7 +113,7 @@
     position: fixed;
     bottom: 0;
     left: 0;
-    width: 420px;
+    width: 29%;
     height: auto;
 }
 
