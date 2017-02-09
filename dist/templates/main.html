@@ -20,7 +20,7 @@
 				</tr>
 			</table>
 		</div>
-		<div class="current-user">
+		<div class="current-user" ng-controller="UsernameCtrl">
 	      <div id="username"> {{ username }} </div>
 	      <button id="changeUsernameButton" ng-click="removeUser()">Change Username</button>
 	    </div>
@@ -31,8 +31,8 @@
 	<div class="messages-container">
 		<div ng-hide="!activeRoom || toggleSignIn">
 			<div class="room-title"> {{ nameOfRoom }} </div>
-			<div class="message-content" ng-repeat="message in messages">{{message.username}} - {{ message.content }} </div>
+			<div class="message-content" ng-repeat="message in messages"><span>{{message.username}} - {{ message.content }}</span><span id="date">{{ message.sentAt }}</span> </div>
 		</div>
-		<ng-include src="'templates/send-message.html'"></ng-include>
+		<ng-include src="'templates/send-message.html'" ng-show="activeRoom"></ng-include>
 	</div>
 </section>

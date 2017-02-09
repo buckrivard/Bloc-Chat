@@ -1,9 +1,11 @@
 (function () {
-	function MainCtrl($scope, Room, Message, $cookies, $location) {
+	function MainCtrl($scope, Room, Message, Usernames) {
 		$scope.rooms = Room.all;
-		$scope.sendMessage = Message.send;
+
+		$scope.send = Message.send;
+
 		$scope.activeRoom = null;
-		$scope.username = $cookies.get('blocChatCurrentUser');
+		$scope.username = Usernames.username;
 
 		//$scope.getByRoomId = Message.getByRoomId;
 
@@ -24,14 +26,17 @@
 			$scope.nameOfRoom = room.room;
 		}
 
-		$scope.removeUser = function() {
-			$cookies.remove('blocChatCurrentUser');
-			console.log("cookie removed " + $cookies.getAll());
-			$location.path('/set-username');
+		$scope.sendMessage = function(messageContent, roomId) {
+			var roomId = $scope.activeRoom.$id;
+			$scope.send(messageContent, roomId);
+			messageContent = "";
 		}
+
+
+
 	}
 
 	angular
 		.module('blocChat')
-		.controller('MainCtrl', ['$scope', 'Room', 'Message', '$cookies', '$location', MainCtrl]);
+		.controller('MainCtrl', ['$scope', 'Room', 'Message', 'Usernames', MainCtrl]);
 })();
