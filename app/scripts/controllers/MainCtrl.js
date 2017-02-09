@@ -1,9 +1,9 @@
 (function () {
-	function MainCtrl($scope, Room, Message, $cookies, $rootScope) {
+	function MainCtrl($scope, Room, Message, $cookies, $location) {
 		$scope.rooms = Room.all;
 		$scope.activeRoom = null;
-		$scope.toggleSignIn = $rootScope.toggleSignIn;
-		$scope.userName = $rootScope.currentUser;
+		$scope.username = $cookies.get('blocChatCurrentUser');
+
 		//$scope.getByRoomId = Message.getByRoomId;
 
 		$scope.addRoom = function(newName) {
@@ -23,29 +23,14 @@
 			$scope.nameOfRoom = room.room;
 		}
 
-		$scope.setCurrentUser = function(blocChatCurrentUser) {
-			if (blocChatCurrentUser) {
-				var newCookie = $cookies.put('blocChatCurrentUser', blocChatCurrentUser);
-				$scope.userName = $rootScope.currentUser;
-				$rootScope.toggleSignIn = false;
-				$scope.toggleSignIn = $rootScope.toggleSignIn;
-				$scope.currentUser = $rootScope.currentUser;
-				console.log($cookies.getAll());
-			} else {
-				return
-			}
-		}
-
 		$scope.removeUser = function() {
 			$cookies.remove('blocChatCurrentUser');
-			console.log("cookie removed");
-			console.log($cookies.getAll());
-			$scope.toggleSignIn = true;
-			$scope.userName = null;
+			console.log("cookie removed " + $cookies.getAll());
+			$location.path('/set-username');
 		}
 	}
 
 	angular
 		.module('blocChat')
-		.controller('MainCtrl', ['$scope', 'Room', 'Message', '$cookies', '$rootScope', MainCtrl]);
+		.controller('MainCtrl', ['$scope', 'Room', 'Message', '$cookies', '$location', MainCtrl]);
 })();

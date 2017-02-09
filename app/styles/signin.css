@@ -87,7 +87,7 @@
 }
 
 .btn-lg {
-    padding: 10px 16px;
+    padding: 7px 14px;
     font-size: 18px;
     line-height: 1.3333333;
     border-radius: 6px;
@@ -104,3 +104,16 @@
     background-color: #286090;
     border-color: #204d74;
 }
+
+.current-user {
+    font-size: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 420px;
+    height: auto;
+}
+

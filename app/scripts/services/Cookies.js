@@ -1,18 +1,17 @@
 (function() {
-	function BlocChatCookies($cookies, $rootScope) {
-		$rootScope.currentUser = $cookies.get('blocChatCurrentUser');
+	function BlocChatCookies($cookies, $location) {
+		var currentUser = $cookies.get('blocChatCurrentUser');
 
-		if (!$rootScope.currentUser || $rootScope.currentUser === '') {
-			$rootScope.toggleSignIn = true;
-			console.log("do we ever even get here? If so, toggleSignIn is: " + $rootScope.toggleSignIn);
-		} else {
-			$rootScope.toggleSignIn = false;
+		if (!currentUser || currentUser === '') {
+			console.log($cookies.getAll());
+			console.log("attempted new url");
+			$location.path('/set-username');
 		}
 	}
 
 	angular
-	.module('blocChat')
-	.run(['$cookies', '$rootScope', BlocChatCookies]);
+		.module('blocChat')
+		.run(['$cookies', '$location', BlocChatCookies]);
 })();
 
 

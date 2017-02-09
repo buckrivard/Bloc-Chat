@@ -21,11 +21,3 @@
 .room-name {
 	text-align: right;	
 }
-
-.current-user {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	width: auto;
-	height: auto;
-}
