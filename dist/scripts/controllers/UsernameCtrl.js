@@ -5,8 +5,6 @@
 				$cookies.put('blocChatCurrentUser', blocChatCurrentUser);
 				console.log("cookie added " + $cookies.getAll());
 				$location.path('/');
-			} else {
-				return
 			}
 		}
 
