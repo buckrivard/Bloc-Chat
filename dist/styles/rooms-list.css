@@ -20,3 +20,33 @@
 .room-name {
 	text-align: right;	
 }
+
+.current-user-name {
+	display: inline-block;
+	height: auto;
+	width: auto;
+	position: relative;
+	bottom: 0;
+	left: 0;
+}
+
+.remove-user {
+	display: inline-block;
+	height: auto;
+	width: auto;
+	position: relative;
+	bottom: 0;
+	right: 0;
+}
+
+.current-user {
+    font-size: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 29%;
+    height: auto;
+}

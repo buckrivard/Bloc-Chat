@@ -7,6 +7,8 @@
 		$scope.activeRoom = null;
 		$scope.username = Usernames.username;
 
+		$scope.messageContent = null;
+
 		//$scope.getByRoomId = Message.getByRoomId;
 
 		$scope.addRoom = function(newName) {
@@ -28,8 +30,8 @@
 
 		$scope.sendMessage = function(messageContent, roomId) {
 			var roomId = $scope.activeRoom.$id;
-			$scope.send(messageContent, roomId);
-			messageContent = "";
+			$scope.send($scope.messageContent, roomId);
+			$scope.messageContent = "";
 		}
 
 

@@ -1,8 +1,17 @@
 <div class="enter-new-message">
 	<div class="new-message-box">
 		<form ng-submit="sendMessage(messageContent, activeRoom.id)" class="new-message-box" name="sendNewMessage">
-			<input class="new-message-content" type="text" placeholder="Enter a message..." ng-model="messageContent">
+			<input class="new-message-content" type="text" placeholder="Enter a message..." ng-model="$parent.messageContent">
 			<input type="submit" class="send-message" value="Send Message">
 		</form>
 	</div>
 </div>
+
+<!--
+<div class="enter-new-message">
+	<div class="new-message-box">
+		<textarea ng-submit="sendMessage(messageContent, activeRoom.id)" class="new-message-box" name="sendNewMessage" placeholder="Enter a message..." ng-model="messageContent"></textarea>
+		<button type="submit" class="send-message" ng-click="sendMessage(messageContent, activeRoom.id)">Send Message</button>
+	</div>
+</div>
+-->

@@ -19,18 +19,24 @@
 					<td>{{ roomName }}</td>
 				</tr>
 			</table>
+
+			<div class="current-user-name" ng-controller="UsernameCtrl">
+		      <span> {{ blocChatCurrentUser }} </span>
+		    </div>
+
+		    <div class="remove-user" ng-controller="UsernameCtrl">
+		      <button id="changeUsernameButton" ng-click="removeUser()">Change Username</button>
+		    </div>
 		</div>
-		<div class="current-user" ng-controller="UsernameCtrl">
-	      <div id="username"> {{ username }} </div>
-	      <button id="changeUsernameButton" ng-click="removeUser()">Change Username</button>
-	    </div>
+
+		
 
 </section>
 
 <section>
 	<div class="messages-container">
-		<div ng-hide="!activeRoom || toggleSignIn">
-			<div class="room-title"> {{ nameOfRoom }} </div>
+		<div class="room-title"> {{ nameOfRoom }} </div>
+		<div class="messages-wrapper" ng-hide="!activeRoom || toggleSignIn">
 			<div class="message-content" ng-repeat="message in messages"><span>{{message.username}} - {{ message.content }}</span><span id="date">{{ message.sentAt | date:'medium'}}</span> </div>
 		</div>
 		<ng-include src="'templates/send-message.html'" ng-show="activeRoom"></ng-include>

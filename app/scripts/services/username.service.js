@@ -7,6 +7,7 @@
 			$cookies.remove('blocChatCurrentUser');
 			console.log("cookie removed " + $cookies.getAll());
 			$location.path('/set-username');
+			blocChatCurrentUser = null;
 		};
 
 		var setCurrentUser = function(blocChatCurrentUser) {

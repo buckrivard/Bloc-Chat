@@ -105,15 +105,3 @@
     border-color: #204d74;
 }
 
-.current-user {
-    font-size: 1rem;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 29%;
-    height: auto;
-}
-
