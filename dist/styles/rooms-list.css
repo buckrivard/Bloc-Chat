@@ -1,23 +1,43 @@
 .rooms {
 	height: 100%;
-	width: auto;
+	width: 29%;
 	position: fixed;
-	top: 80px;
+	top: 85px;
 	display: inline-block;
-	width: 420px;
-	overflow-y: scroll;
+	overflow-y: auto;
 }
 
 .rooms table {
 	cursor: pointer;
 	font-size: 3rem;
-	width: inherit;
+	width: 100%;
 }
 
-.rooms table td {
+
+
+.room-name {
+	text-align: right;
 	padding-right: 15px;
 }
 
-.room-name {
-	text-align: right;	
+.current-user {
+    font-size: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 29%;
+    height: auto;
+    padding-right: 0px;
 }
+
+.current-user-name {
+	margin-top: auto;
+}
+
+.remove-user {
+
+}
+

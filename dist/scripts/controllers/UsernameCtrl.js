@@ -1,22 +1,13 @@
 (function () {
-	function UsernameCtrl($scope, $cookies, $location) {
-		$scope.setCurrentUser = function(blocChatCurrentUser) {
-			if (blocChatCurrentUser) {
-				$cookies.put('blocChatCurrentUser', blocChatCurrentUser);
-				console.log("cookie added " + $cookies.getAll());
-				$location.path('/');
-			} else {
-				return
-			}
-		}
+	function UsernameCtrl($scope, Usernames) {
 
-		$scope.removeUser = function() {
-			$cookies.remove('blocChatCurrentUser');
-			console.log("cookie removed " + $cookies.getAll());
-			$location.path('/set-username');
-		}
+		$scope.blocChatCurrentUser = Usernames.username;
+
+		$scope.removeUser = Usernames.removeUser;
+
+		$scope.setCurrentUser = Usernames.setCurrentUser;
 	}
 	angular
 		.module('blocChat')
-		.controller('UsernameCtrl', ['$scope', '$cookies', '$location', UsernameCtrl]);
+		.controller('UsernameCtrl', ['$scope', 'Usernames', UsernameCtrl]);
 })();

@@ -8,30 +8,39 @@
 			</form>
 		</div>
 		
-		<div class="rooms">
+		<div class="rooms" scroll-glue>
 			<table>
-				<tr class="room-name" ng-repeat="room in rooms">
-					<td ng-click="selectRoom(room)">{{ room.room }}</td>
+				<tr ng-repeat="room in rooms">
+					<td class="room-name" ng-click="selectRoom(room)">{{ room.room }}</td>
 				</tr>
-			</table>
-			<table ng-if="roomName">
-				<tr class="room-name">
+				<tr class="room-name" ng-if="roomName">
 					<td>{{ roomName }}</td>
 				</tr>
 			</table>
+			<div class="current-user" ng-controller="UsernameCtrl">
+				<div class="current-user-name"><span> {{ blocChatCurrentUser }} </span></div>
+				<div class="remove-user"><button id="changeUsernameButton" ng-click="removeUser()"> Change Username </button></div>
+			</div>
+<!--
+			<div class="current-user-name" ng-controller="UsernameCtrl">
+		      <span> {{ blocChatCurrentUser }} </span>
+		    </div>
+
+		    <div class="remove-user" ng-controller="UsernameCtrl">
+		      <button id="changeUsernameButton" ng-click="removeUser()">Change Username</button>
+		    </div> -->
 		</div>
-		<div class="current-user">
-	      <div id="username"> {{ username }} </div>
-	      <button id="changeUsernameButton" ng-click="removeUser()">Change Username</button>
-	    </div>
+
+		
 
 </section>
 
 <section>
 	<div class="messages-container">
-		<div ng-hide="!activeRoom || toggleSignIn">
-			<div class="room-title"> {{ nameOfRoom }} </div>
-			<div class="message-content" ng-repeat="message in messages">{{message.username}} - {{ message.content }} </div>
-		</div>	
+		<div class="room-title"> {{ nameOfRoom }} </div>
+		<div class="messages-wrapper" ng-hide="!activeRoom || toggleSignIn" scroll-glue>
+			<div class="message-content" ng-repeat="message in messages"><span>{{message.username}} - {{ message.content }}</span><span id="date">{{ message.sentAt | date:'medium'}}</span> </div>
+		</div>
+		<ng-include src="'templates/send-message.html'" ng-show="activeRoom"></ng-include>
 	</div>
 </section>

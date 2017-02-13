@@ -7,7 +7,7 @@
   position: fixed;
   top: 40px;
   display: inline-block;
-  width: 420px;
+  width: 29%;
   overflow-y: scroll;
 }
 
@@ -103,17 +103,5 @@
     color: #fff;
     background-color: #286090;
     border-color: #204d74;
-}
-
-.current-user {
-    font-size: 1rem;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 420px;
-    height: auto;
 }
 
