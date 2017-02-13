@@ -2,9 +2,9 @@
 	height: 100%;
 	width: 29%;
 	position: fixed;
-	top: 80px;
+	top: 85px;
 	display: inline-block;
-	overflow-y: scroll;
+	overflow-y: auto;
 }
 
 .rooms table {
@@ -13,30 +13,11 @@
 	width: 100%;
 }
 
-.rooms table td {
-	padding-right: 15px;
-}
+
 
 .room-name {
-	text-align: right;	
-}
-
-.current-user-name {
-	display: inline-block;
-	height: auto;
-	width: auto;
-	position: relative;
-	bottom: 0;
-	left: 0;
-}
-
-.remove-user {
-	display: inline-block;
-	height: auto;
-	width: auto;
-	position: relative;
-	bottom: 0;
-	right: 0;
+	text-align: right;
+	padding-right: 15px;
 }
 
 .current-user {
@@ -49,4 +30,14 @@
     left: 0;
     width: 29%;
     height: auto;
+    padding-right: 0px;
 }
+
+.current-user-name {
+	margin-top: auto;
+}
+
+.remove-user {
+
+}
+
