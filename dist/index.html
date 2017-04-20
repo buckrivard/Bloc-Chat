@@ -3,6 +3,7 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>Buck Chat</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="/styles/normalize.css">
     <link rel="stylesheet" type="text/css" href="/styles/style.css">
     <link rel="stylesheet" type="text/css" href="/styles/banner.css">
@@ -12,12 +13,13 @@
     <link rel="stylesheet" type="text/css" href="/styles/signin.css">
     <link rel="stylesheet" type="text/css" href="/styles/send-message.css">
 </head>
-<body class="index">
-	<header class="banner">
-        <span>Buck Chat</span>
-	</header>
-
-	<ui-view></ui-view>
+<body class="container-fluid">
+  <div class="row my-row">
+    <div class="col-md-12">
+      <h1 class="horiz-center"> Buck Chat</h1>
+    </div>
+    <ui-view></ui-view>
+  </div>
 
 	<script src="https://www.gstatic.com/firebasejs/3.5.0/firebase.js"></script>
     <script>

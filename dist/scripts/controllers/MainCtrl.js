@@ -1,13 +1,19 @@
 (function () {
 	function MainCtrl($scope, Room, Message, Usernames) {
+		$scope.messages = Message.messages
+
 		$scope.rooms = Room.all;
 
 		$scope.send = Message.send;
 
 		$scope.activeRoom = null;
+
 		$scope.username = Usernames.username;
 
 		$scope.messageContent = null;
+
+		$scope.selected = null
+
 
 		//$scope.getByRoomId = Message.getByRoomId;
 
@@ -22,10 +28,11 @@
 			// I.e. on page load? As it is now it requires creating the room then clicking it
 			*/
 		}
-		$scope.selectRoom = function(room) {
+		$scope.selectRoom = function(room, index) {
 			$scope.activeRoom = room;
 			$scope.messages = Message.getByRoomId(room.$id);
 			$scope.nameOfRoom = room.room;
+			$scope.selected = index
 		}
 
 		$scope.sendMessage = function(messageContent, roomId) {
@@ -34,8 +41,15 @@
 			$scope.messageContent = "";
 		}
 
-
-
+		$scope.setBackgroundColor = function(messages, index) {
+			if (messages[0].username) {
+				return 'white'
+			} else if (messages[index].username === messages[index + 1].username) {
+				return 'white'
+			} else {
+				return 'gray'
+			}
+		}
 	}
 
 	angular

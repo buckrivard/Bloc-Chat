@@ -1,5 +1,5 @@
 .rooms {
-	height: 100%;
+	height: auto;
 	width: 29%;
 	position: fixed;
 	top: 85px;
@@ -13,24 +13,27 @@
 	width: 100%;
 }
 
-
+.table-wrapper {
+	height: calc(auto + 150px);
+	overflow-y: auto;
+}
 
 .room-name {
 	text-align: right;
-	padding-right: 15px;
+	cursor: pointer;
 }
 
 .current-user {
-    font-size: 1rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     position: fixed;
     bottom: 0;
     left: 0;
-    width: 29%;
+    width: 25%;
     height: auto;
     padding-right: 0px;
+    padding: 0 0 5px 5px;
 }
 
 .current-user-name {
@@ -41,3 +44,6 @@
 
 }
 
+.active-room {
+	background-color: rgba(128, 128, 128, 0.14);
+}

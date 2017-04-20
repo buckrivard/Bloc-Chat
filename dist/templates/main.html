@@ -1,46 +1,32 @@
-<section>
-	</div>
-		<div class="add-room">
-			<form class="new-room-form" ng-submit="addRoom(roomName)">
-				<label>Add a Room!<br>
-				<input class="input" type="text" name="add_room" ng-model="roomName" placeholder="Room Name"></label>
+<div class="main">
+  <div class="rooms-main">
+    <div class="col-md-3 no-float" style="height: 100%; overflow-y: auto;">
+			<form class="new-room-form horiz-center col-md-12 pull-right" ng-submit="addRoom(roomName)">
+				<input class="input" type="text" name="add_room" ng-model="roomName" placeholder="Add Room"></label>
 				<input type="button" value="Add it, baby" ng-click="addRoom(roomName)">
 			</form>
-		</div>
-		
-		<div class="rooms" scroll-glue>
-			<table>
-				<tr ng-repeat="room in rooms">
-					<td class="room-name" ng-click="selectRoom(room)">{{ room.room }}</td>
-				</tr>
-				<tr class="room-name" ng-if="roomName">
-					<td>{{ roomName }}</td>
-				</tr>
-			</table>
+			<div class="col-md-12" scroll-glue>
+				<table class="pull-right">
+					<tr ng-repeat="room in rooms" ng-click="selectRoom(room, $index)" ng-class="{'active-room': $index == selected}">
+						<td class="room-name">{{ room.room }}</td>
+					</tr>
+					<tr class="room-name" ng-if="roomName">
+						<td>{{ roomName }}</td>
+					</tr>
+				</table>
+			</div>
 			<div class="current-user" ng-controller="UsernameCtrl">
 				<div class="current-user-name"><span> {{ blocChatCurrentUser }} </span></div>
 				<div class="remove-user"><button id="changeUsernameButton" ng-click="removeUser()"> Change Username </button></div>
 			</div>
-<!--
-			<div class="current-user-name" ng-controller="UsernameCtrl">
-		      <span> {{ blocChatCurrentUser }} </span>
-		    </div>
-
-		    <div class="remove-user" ng-controller="UsernameCtrl">
-		      <button id="changeUsernameButton" ng-click="removeUser()">Change Username</button>
-		    </div> -->
-		</div>
-
-		
-
-</section>
-
-<section>
-	<div class="messages-container">
-		<div class="room-title"> {{ nameOfRoom }} </div>
-		<div class="messages-wrapper" ng-hide="!activeRoom || toggleSignIn" scroll-glue>
-			<div class="message-content" ng-repeat="message in messages"><span>{{message.username}} - {{ message.content }}</span><span id="date">{{ message.sentAt | date:'medium'}}</span> </div>
-		</div>
-		<ng-include src="'templates/send-message.html'" ng-show="activeRoom"></ng-include>
-	</div>
-</section>
+    </div>
+    <h1 class="col-md-9"> {{ nameOfRoom }} </h1>
+    <div class="col-md-9 no-float" ng-hide="!activeRoom || toggleSignIn" style="overflow-y: scroll; height: calc(100% - 130px)" scroll-glue>
+				<div class="message-content" ng-repeat="message in messages" ng-class="{'gray': $index % 2 === 0 }" scroll-glue><span>{{message.username}} - {{ 		message.content }}</span><span id="date">{{ message.sentAt | date:'medium'}}</span>
+				</div>
+			<div class="enter-message">
+					<ng-include src="'templates/send-message.html'" ng-show="activeRoom"></ng-include>	
+			</div>
+    </div>
+  </div>
+</div>

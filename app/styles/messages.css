@@ -11,8 +11,7 @@
 }
 
 .messages-wrapper {
-	height: calc(100% - 140px);
-  	overflow-y: auto;
+	height: 100%;
 }
 
 .room-title {
@@ -33,9 +32,9 @@
 	background-color: white;
 	font-size: 1.5rem;
 	line-height: 1.75;
-	border: 1px solid black;
+	/*border: 1px solid black; 
 	border-radius: 8px;
-	margin: 1px;
+	margin: 1px;*/
 	overflow-x: visible;
 	padding-left: 5px;
 	margin-left: 5px;
@@ -46,4 +45,12 @@
 	opacity: .5;
 	margin-top: auto;
 	margin-bottom: auto;
+}
+
+.white {
+	background-color: white
+}
+
+.gray {
+	background-color: rgba(128, 128, 128, 0.14)
 }
